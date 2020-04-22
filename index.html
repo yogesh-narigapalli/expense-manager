@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense</title>
+    <style>
+        .btnIncrementer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body class="btnIncrementer">
+    <h4>Total Expense :</h4>
+    <h1 id="headingTotal"></h1>
+    <h4>Add your expense :</h4>
+    <input type="text" id="inputAmount"/>
+    <br>
+    <button id="btnInc" >+</button>
+    <script>
+        let totalExpense=0;
+        const number= document.querySelector("#headingTotal");
+        number.textContent=totalExpense;
+        
+
+        function totalExpenseCalc(){
+            const inputValue= document.querySelector("#inputAmount");
+            
+            totalExpense= totalExpense+parseInt(inputValue.value);
+        
+            number.textContent=totalExpense;
+
+
+        }
+        const element=document.querySelector("#btnInc");
+        element.addEventListener("click",totalExpenseCalc,false);
+        
+    </script>
+    
+</body>
+</html>
